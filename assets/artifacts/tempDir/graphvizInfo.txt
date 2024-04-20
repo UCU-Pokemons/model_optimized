@@ -1,0 +1,42 @@
+41
+0 Transpose_2 Transpose outputAdjNodes 1 1 inputAdjNodes 0 img diagInfo TIDL ALLOWLISTING LAYER CHECK -- [TIDL_TransposeLayer]  should be removed in import process. If not, this model will not work!
+1 Unsqueeze_3 Unsqueeze outputAdjNodes 1 2 inputAdjNodes 1 0 diagInfo Layer type not supported by TIDL --- layer type - Unsqueeze,  Node name -Unsqueeze_3
+2 Div_5 Div outputAdjNodes 1 3 inputAdjNodes 1 1 diagInfo Layer type not supported by TIDL --- layer type - Div,  Node name -Div_5
+3 Conv_6 Conv outputAdjNodes 1 4 inputAdjNodes 1 2 diagInfo 
+4 Relu_7 Relu outputAdjNodes 1 5 inputAdjNodes 1 3 diagInfo 
+5 Conv_8 Conv outputAdjNodes 1 6 inputAdjNodes 1 4 diagInfo 
+6 Relu_9 Relu outputAdjNodes 2 7 37 inputAdjNodes 1 5 diagInfo 
+7 MaxPool_10 MaxPool outputAdjNodes 2 8 9 inputAdjNodes 1 6 diagInfo ALLOWLISTING : POOLING layer : Number of input dimensions must be 4  --  file info - tidl_import_common_model_check.cpp , TIDL_checkPoolingTensorProperties , 618
+8 Conv_14 Conv outputAdjNodes 1 12 inputAdjNodes 1 7 diagInfo 
+9 Conv_11 Conv outputAdjNodes 1 10 inputAdjNodes 1 7 diagInfo 
+10 Relu_12 Relu outputAdjNodes 1 11 inputAdjNodes 1 9 diagInfo 
+11 Conv_13 Conv outputAdjNodes 1 12 inputAdjNodes 1 10 diagInfo 
+12 Add_15 Add outputAdjNodes 1 13 inputAdjNodes 2 11 8 diagInfo ALLOWLISTING : ADD/MUL/SUB layer : The variable inputs of layer must have 4 dimensions  --  file info - tidl_import_common_model_check.cpp , TIDL_checkAddMulSubDivTensorProperties , 281
+13 Relu_16 Relu outputAdjNodes 2 14 34 inputAdjNodes 1 12 diagInfo 
+14 MaxPool_17 MaxPool outputAdjNodes 2 15 16 inputAdjNodes 1 13 diagInfo ALLOWLISTING : POOLING layer : Number of input dimensions must be 4  --  file info - tidl_import_common_model_check.cpp , TIDL_checkPoolingTensorProperties , 618
+15 Conv_21 Conv outputAdjNodes 1 19 inputAdjNodes 1 14 diagInfo 
+16 Conv_18 Conv outputAdjNodes 1 17 inputAdjNodes 1 14 diagInfo 
+17 Relu_19 Relu outputAdjNodes 1 18 inputAdjNodes 1 16 diagInfo 
+18 Conv_20 Conv outputAdjNodes 1 19 inputAdjNodes 1 17 diagInfo 
+19 Add_22 Add outputAdjNodes 1 20 inputAdjNodes 2 18 15 diagInfo ALLOWLISTING : ADD/MUL/SUB layer : The variable inputs of layer must have 4 dimensions  --  file info - tidl_import_common_model_check.cpp , TIDL_checkAddMulSubDivTensorProperties , 281
+20 Relu_23 Relu outputAdjNodes 2 21 31 inputAdjNodes 1 19 diagInfo 
+21 MaxPool_24 MaxPool outputAdjNodes 2 22 23 inputAdjNodes 1 20 diagInfo ALLOWLISTING : POOLING layer : Number of input dimensions must be 4  --  file info - tidl_import_common_model_check.cpp , TIDL_checkPoolingTensorProperties , 618
+22 Conv_28 Conv outputAdjNodes 1 26 inputAdjNodes 1 21 diagInfo 
+23 Conv_25 Conv outputAdjNodes 1 24 inputAdjNodes 1 21 diagInfo 
+24 Relu_26 Relu outputAdjNodes 1 25 inputAdjNodes 1 23 diagInfo 
+25 Conv_27 Conv outputAdjNodes 1 26 inputAdjNodes 1 24 diagInfo 
+26 Add_29 Add outputAdjNodes 1 27 inputAdjNodes 2 25 22 diagInfo ALLOWLISTING : ADD/MUL/SUB layer : The variable inputs of layer must have 4 dimensions  --  file info - tidl_import_common_model_check.cpp , TIDL_checkAddMulSubDivTensorProperties , 281
+27 Relu_30 Relu outputAdjNodes 1 28 inputAdjNodes 1 26 diagInfo 
+28 Conv_37 Conv outputAdjNodes 1 29 inputAdjNodes 1 27 diagInfo 
+29 Relu_38 Relu outputAdjNodes 1 30 inputAdjNodes 1 28 diagInfo 
+30 Resize_44 Resize outputAdjNodes 1 39 inputAdjNodes 1 29 diagInfo SUGGESTION -- [TIDL_ResizeLayer]  Resize kernel with non-power of 2 resize ratio is not optimal.
+31 Conv_35 Conv outputAdjNodes 1 32 inputAdjNodes 1 20 diagInfo 
+32 Relu_36 Relu outputAdjNodes 1 33 inputAdjNodes 1 31 diagInfo 
+33 Resize_42 Resize outputAdjNodes 1 39 inputAdjNodes 1 32 diagInfo SUGGESTION -- [TIDL_ResizeLayer]  Resize kernel with non-power of 2 resize ratio is not optimal.
+34 Conv_33 Conv outputAdjNodes 1 35 inputAdjNodes 1 13 diagInfo 
+35 Relu_34 Relu outputAdjNodes 1 36 inputAdjNodes 1 34 diagInfo 
+36 Resize_40 Resize outputAdjNodes 1 39 inputAdjNodes 1 35 diagInfo INFORMATION -- [TIDL_ResizeLayer]  Any resize ratio which is power of 2 and greater than 4 will be placed by combination of 4x4 resize layer and 2x2 resize layer. For example a 8x8 resize will be replaced by 4x4 resize followed by 2x2 resize.
+37 Conv_31 Conv outputAdjNodes 1 38 inputAdjNodes 1 6 diagInfo 
+38 Relu_32 Relu outputAdjNodes 1 39 inputAdjNodes 1 37 diagInfo 
+39 Concat_45 Concat outputAdjNodes 1 40 inputAdjNodes 4 38 36 33 30 diagInfo 
+40 Conv_46 Conv outputAdjNodes 0 output inputAdjNodes 1 39 diagInfo 
